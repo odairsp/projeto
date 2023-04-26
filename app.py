@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
+        
         class Users(Document):
             login = StringField(require=True, unique=True)
             senha = StringField(require=True)
@@ -18,9 +19,10 @@ def index():
         )
         user.save()
 
+        num_users = Users.objects.count()
         
 
-    return render_template('index.html', title='Homepage', heading='Bem vindo', content='Conexão feita com sussesso!')
+    return render_template('index.html', title='Homepage', heading='Bem vindo', content='Conexão feita com sussesso!', num_users = num_users)
 
 @app.route("/login")
 def login():
@@ -28,7 +30,10 @@ def login():
     return render_template('login.html', title='Login', heading='Login')
 
 
+@app.route("/user/cadastro")
+def cadastro():
 
+    return render_template('cadastroUser.html', title='User', heading='Cadastro')
 
 
 
