@@ -31,9 +31,21 @@ def login():
 
 
 @app.route("/user/cadastro")
-def cadastro():
+def cadastroUser():
 
-    return render_template('cadastroUser.html', title='User', heading='Cadastro')
+    return render_template('cadastroUser.html', title='User', heading='Usuário')
+
+
+@app.route("/projeto/cadastro")
+def cadastroProjeto():
+
+    return render_template('cadastroProjetos.html', title='Projeto', heading='Projeto')
+
+
+@app.route("/tarefa/cadastro")
+def cadastroTarefa():
+
+    return render_template('cadastroTarefas.html', title='Tarefa', heading='Tarefa')
 
 
 

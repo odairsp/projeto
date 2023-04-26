@@ -1,0 +1,16 @@
+.card {
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  margin: 50px;
+  padding: 20px;
+}
+.card p {
+  text-align: end;
+}
+.card form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
