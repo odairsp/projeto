@@ -9,13 +9,35 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/index.css">
     <title>{{title}}</title>
+
+    <style>
+        .card {
+            justify-content: center;
+            align-items: center;
+            width: max-content;
+            margin: 50px;
+            padding: 20px;
+            
+        }
+        #button-container{
+            flex-direction: column;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="card">
-            <h1 >{{heading}}</h1>
-            
+        <h1>{{heading}}</h1>
+        <div class="card d-flex col-12">
+
+            <div class="d-inline-flex m-0 " id="button-container">
+                <a class="m-4 btn btn-primary " href="cadastroUser">Cadastro Usuários</a>
+                <a class="m-4 btn btn-primary " href="cadastroTarefas">Cadastro Tarefas</a>
+                <a class="m-4 btn btn-primary " href="cadastroProjetos">Cadastro Projetos</a>
+
+            </div>
+
+
         </div>
     </div>
 
