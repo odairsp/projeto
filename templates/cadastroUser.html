@@ -4,17 +4,21 @@
 {% block content %}
 <div class="container">
     <div class="card">
-        
-        <form action="/" method="get">
+
+        <form action="/" method="post">
             <p>
-                <label class="label" for="nome">Nome</label>
-                <input type="text" class="input" name="nome" id="nome">
+                <label class="label" for="login">login</label>
+                <input type="text" class="input" name="login" id="login">
             </p>
             <p>
                 <label class="label" for="senha">Senha</label>
                 <input type="password" class="input" name="senha" id="senha">
             </p>
-            <button class="btn btn-primary" type="submit">Enviar</button>
+            <p>
+                <button class="btn btn-primary" type="submit">Enviar</button>
+                <a class="btn btn-primary" href="">Voltar</a>
+            </p>
+
         </form>
 
     </div>
