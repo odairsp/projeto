@@ -19,16 +19,12 @@ def login():
     
     if request.method == 'POST':
         text = request.form['login']
-        user = Users(
-            login = request.form['login'],
-            senha = request.form['senha']
-        )
-        connect(host='mongodb+srv://dba:dba123@odr.ookqkat.mongodb.net/test')
-        user.save()
-        return render_template('cadastroUser.html', title='Homepage', heading='Cadastro usuário')
+        
+        return render_template('cadastroUser.html', title='Homepage', heading='Cadastro usuário',login=text)
     else:
         text = ''
-    return render_template('login.html', title='Homepage', heading='Login', login=text)
+        return render_template('login.html', title='Homepage', heading='Login', login=text)
+    
 
 @app.route("/home", methods = ['POST','GET'])
 def index():
@@ -36,9 +32,10 @@ def index():
     
     if request.method == 'POST':
         connect(host='mongodb+srv://dba:dba123@odr.ookqkat.mongodb.net/test')
-    for user in Users.objects:    
-        if request.form['login'] == user.login and request.form['senha'] == user.senha :
-            return render_template('index.html', title='Home', heading='Bem vindo!')
+    
+        for user in Users.objects:    
+            if request.form['login'] == user.login and request.form['senha'] == user.senha :
+                return render_template('index.html', title='Home', heading='Bem vindo!')
     if text == '':
         return render_template('login.html', title='Home', heading='Usuário ou senha inválidos!')
 
