@@ -10,11 +10,11 @@
         <form action="/" method="get">
             <p>
                 <label class="label" for="tarefa">Nome Tarefa</label>
-                <input type="text" class="input" name="tarefa" id="tarefa">
+                <input type="text" class="input" name="tarefa" id="tarefa" required>
             </p>
             <p style="display: flex;align-items: center;">
-                <label class=" label" for="descricao" style="margin-right: 5px;">Descrição</label>
-                <textarea type="text" name="descricao" id="descricao" rows="2" cols="33" p-2></textarea>
+                <label class=" label" for="descricao" >Descrição</label>
+                <textarea type="text" name="descricao" id="descricao" rows="2" cols="33" p-2 required></textarea>
             </p>
             <button class="btn btn-primary" type="submit">Enviar</button>
         </form>
